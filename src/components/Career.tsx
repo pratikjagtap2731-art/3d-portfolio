@@ -15,58 +15,58 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Co-Founder</h4>
-                <h5>CallHQ.ai</h5>
+                <h4>Technical Product Associate</h4>
+                <h5>3rd Rock Essentials</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Building CallHQ.ai, a voice AI platform for
-              automating customer calls, support, and conversions.
+              Leading end-to-end Agile delivery, crafting PRDs, and rolling out
+              Stripe-integrated subscription workflows delivering 14% MRR growth.
+              Improved D2C onboarding and retention by 27% through GA4 funnels
+              and A/B testing.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Adobe</h4>
-                <h5>6+ years · Noida</h5>
+                <h4>Product Manager Intern</h4>
+                <h5>Walmart · Bentonville, AR</h5>
               </div>
-              <h3>2017–24</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Senior Lead Software Engineer (Feb 2024 – May 2024). Lead Software
-              Engineer (Feb 2021 – Feb 2024). Software Engineer II (Dec 2017 –
-              Feb 2021): internationalization, globalization, and localization for
-              Adobe Technical Communication Suite; functional and linguistic testing
-              strategy; in-house tooling; collaboration with product and engineering
-              for high-quality localized releases.
+              Led full product lifecycle for an outbound picking tool across
+              fulfillment centers, improving throughput 42%, reducing travel time
+              27%, and delivering $1.8M ROI in 10 weeks.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Consultant</h4>
-                <h5>Genpact Headstrong </h5>
+                <h4>Product Marketing Consultant</h4>
+                <h5>SKLLD · Durham, NC</h5>
               </div>
-              <h3>2016–17</h3>
+              <h3>2023</h3>
             </div>
             <p>
-              Sep 2016 – Nov 2017. Developed and maintained WCF services consumed
-              by the UI; deployment support across environments; NUnit tests and
-              coverage; bug fixes from QA and users; database work.
+              Built GTM strategy for a job training platform, conducted 150+
+              stakeholder interviews, and designed Figma prototypes achieving
+              65% positive beta feedback.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Sf Engineer</h4>
-                <h5>Infogain</h5>
+                <h4>Programmer Analyst</h4>
+                <h5>Cognizant · Pune, India</h5>
               </div>
-              <h3>2013-16</h3>
+              <h3>2022–23</h3>
             </div>
             <p>
-              Software engineering across enterprise projects, contributing to
-              design, development, and delivery of business applications.
+              Facilitated ML platform development with Python pipelines, built
+              SQL/Tableau dashboards influencing leadership decisions, and
+              automated ETL workflows improving processing speed by 45%.
             </p>
           </div>
         </div>
