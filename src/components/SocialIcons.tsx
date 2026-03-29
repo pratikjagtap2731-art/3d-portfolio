@@ -71,20 +71,20 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://github.com/pratikjagtap2731-art"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaGithub />
-          </a>
-        </span>
-        <span>
-          <a
             href="https://www.linkedin.com/in/pj00/"
             target="_blank"
             rel="noreferrer"
           >
             <FaLinkedinIn />
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://github.com/pratikjagtap2731-art"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub />
           </a>
         </span>
         <span>
