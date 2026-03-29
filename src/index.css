@@ -85,11 +85,6 @@ body {
   position: relative;
 }
 
-#smooth-wrapper {
-  position: relative !important;
-  z-index: 12 !important;
-}
-
 .container1 {
   width: var(--cWidth);
   height: var(--vh);

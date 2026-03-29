@@ -328,11 +328,6 @@ h2.landing-info-h2 {
     bottom: 0;
     z-index: 11;
     position: fixed;
-    pointer-events: none;
-  }
-
-  .character-hover {
-    pointer-events: auto;
   }
 
   .character-model::after,
