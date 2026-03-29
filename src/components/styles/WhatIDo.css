@@ -34,50 +34,51 @@
 }
 .what-box-in {
   flex-direction: column;
-  height: 500px;
+  height: 650px;
   margin-left: 200px;
   position: relative;
   display: none;
 }
 .what-content {
   width: 450px;
-  height: 33%;
-  min-height: 50%;
+  height: 25%;
+  min-height: 33.33%;
   transition: 0.5s;
   /* border: 0.5px dashed rgba(255, 255, 255, 0.3); */
   position: relative;
-  padding: 50px;
+  padding: 20px 40px;
   box-sizing: border-box;
 }
 
 .what-noTouch:hover,
 .what-content-active {
-  min-height: 67%;
-  padding: 40px 50px;
+  min-height: 70%;
+  padding: 20px 40px;
 }
 
 .what-noTouch:hover ~ .what-content,
 .what-box-in:hover .what-noTouch:not(:hover),
 .what-content.what-sibling {
-  min-height: 33%;
-  padding: 10px 50px;
+  min-height: 15%;
+  padding: 6px 40px;
 }
 .what-content h3 {
-  font-size: 35px;
+  font-size: 22px;
   letter-spacing: 1px;
   margin: 0;
 }
 .what-content p {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 13px;
+  line-height: 17px;
   font-weight: 200;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.5px;
+  margin: 6px 0 4px;
 }
 .what-content h4 {
   font-weight: 300;
   letter-spacing: 1px;
-  margin: 0px;
-  font-size: 14px;
+  margin: 4px 0 0;
+  font-size: 13px;
   opacity: 0.3;
 }
 .what-content-in {
@@ -199,7 +200,7 @@
   animation: whatBorders 1.2s 1 forwards;
 }
 .what-border2 svg {
-  height: 500px;
+  height: 650px;
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
@@ -211,10 +212,10 @@
 .what-content-in h5 {
   font-weight: 300;
   opacity: 0.5;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 1px;
   font-family: "Geist", sans-serif;
-  margin-bottom: 5px;
+  margin: 4px 0 3px;
 }
 @keyframes whatBorders {
   80% {
@@ -249,27 +250,29 @@
     margin-right: 20%;
   }
   .what-box-in {
-    height: 400px;
+    height: 560px;
   }
   .what-content h3 {
-    font-size: 28px;
+    font-size: 19px;
   }
   .what-content {
-    padding: 30px;
+    padding: 18px 25px;
     width: 400px;
   }
   .what-content p {
-    font-size: 13px;
+    font-size: 12px;
   }
   .what-noTouch:hover,
   .what-content-active {
-    padding: 20px 30px;
+    min-height: 70%;
+    padding: 18px 25px;
   }
 
   .what-noTouch:hover ~ .what-content,
   .what-box-in:hover .what-noTouch:not(:hover),
   .what-content.what-sibling {
-    padding: 10px 30px;
+    min-height: 15%;
+    padding: 5px 25px;
   }
   .what-tags {
     font-size: 12px;
@@ -290,27 +293,30 @@
     padding-bottom: 50px;
   }
   .what-box-in {
-    height: 500px;
+    height: 620px;
     margin-left: -50px;
   }
   .what-content {
-    padding: 50px;
+    padding: 18px 25px;
     width: 500px;
   }
   .what-content p {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  .what-content h3 {
+    font-size: 19px;
   }
   .what-noTouch:hover,
   .what-content-active {
-    min-height: 67%;
-    padding: 50px;
+    min-height: 70%;
+    padding: 18px 25px;
   }
 
   .what-noTouch:hover ~ .what-content,
   .what-box-in:hover .what-noTouch:not(:hover),
   .what-content.what-sibling {
-    min-height: 33%;
-    padding: 10px 50px;
+    min-height: 15%;
+    padding: 5px 25px;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -326,7 +332,7 @@
     justify-content: left;
   }
   .what-box:last-child {
-    height: 500px;
+    height: 600px;
   }
   .what-box {
     width: 500px;
@@ -338,7 +344,7 @@
   }
   .what-box-in {
     margin-left: 0px;
-    height: 450px;
+    height: 580px;
   }
   .what-content h5,
   .what-content-flex {
@@ -359,19 +365,21 @@
   }
   .what-noTouch:hover,
   .what-content-active {
+    min-height: 65%;
     padding: 10px 30px;
   }
   .what-tags {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .what-noTouch:hover ~ .what-content,
   .what-box-in:hover .what-noTouch:not(:hover),
   .what-content.what-sibling {
+    min-height: 17.5%;
     padding: 5px 30px;
   }
   .what-content h3 {
-    font-size: 25px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 550px) {

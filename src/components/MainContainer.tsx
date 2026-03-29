@@ -4,6 +4,7 @@ import AskMe from "./AskMe";
 import Career from "./Career";
 import Contact from "./Contact";
 import Cursor from "./Cursor";
+import Education from "./Education";
 import Landing from "./Landing";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
@@ -50,6 +51,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
                 <TechStack />
               </Suspense>
             )}
+            <Education />
             <Contact />
           </div>
         </div>

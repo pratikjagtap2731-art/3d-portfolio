@@ -1,12 +1,13 @@
 .contact-section {
   margin: auto;
-  padding-bottom: 100px;
-  margin-top: 100px;
+  padding-bottom: 80px;
+  margin-top: 120px;
   position: relative;
   z-index: 2;
   background-color: var(--backgroundColor);
 }
 
+/* ── Heading ── */
 .contact-section h3 {
   font-size: 60px;
   font-weight: 400;
@@ -14,62 +15,195 @@
   margin: 0;
 }
 
-.contact-flex {
-  display: flex;
-  justify-content: space-between;
+.contact-tagline {
+  font-size: 18px;
+  opacity: 0.5;
+  margin: 12px 0 0;
+  font-weight: 300;
 }
 
-.contact-flex h4 {
-  font-weight: 500;
-  margin: 0;
-  opacity: 0.6;
-}
-
-.contact-box {
+/* ── Big email / phone links ── */
+.contact-cta-row {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
+  gap: 0;
 }
 
-.contact-flex p {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-a.contact-social {
-  font-size: 25px;
-  border-bottom: 1px solid #ccc;
-}
-
-.contact-box h2 {
+.contact-cta-link {
+  font-size: 28px;
   font-weight: 400;
-  font-size: 23px;
-  margin: 0;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s, padding-left 0.3s;
 }
 
-.contact-box h2>span {
+.contact-cta-link:hover {
+  color: var(--accentColor);
+  padding-left: 12px;
+}
+
+.contact-cta-link svg {
+  font-size: 22px;
+  opacity: 0.4;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.contact-cta-link:hover svg {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+/* ── Action buttons ── */
+.contact-actions-row {
+  margin-top: 48px;
+  display: flex;
+  gap: 16px;
+}
+
+.contact-btn {
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.contact-btn.filled {
+  background-color: var(--accentColor);
+  color: #0a0e17;
+}
+
+.contact-btn.filled:hover {
+  box-shadow: 0 0 30px rgba(94, 234, 212, 0.3), 0 0 60px rgba(94, 234, 212, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-btn.outline {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+}
+
+.contact-btn.outline:hover {
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+  transform: translateY(-2px);
+}
+
+/* ── Elsewhere links ── */
+.contact-elsewhere {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-elsewhere-label,
+.contact-why-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.4;
+  font-weight: 500;
+}
+
+.contact-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 32px;
+}
+
+.contact-links a {
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.7;
+  transition: opacity 0.25s, color 0.25s;
+}
+
+.contact-links a:hover {
+  opacity: 1;
   color: var(--accentColor);
 }
 
-.contact-box h5 {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 20px;
-  display: flex;
-  gap: 10px;
-  opacity: 0.5;
+.contact-links a svg {
+  font-size: 14px;
 }
 
+/* ── Why work with me ── */
+.contact-why {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-why-items {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-why-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.why-num {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accentColor);
+  opacity: 0.6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-why-item p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* ── Footer ── */
+.contact-footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.contact-footer em {
+  color: var(--accentColor);
+  font-style: normal;
+}
+
+.contact-copy {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Responsive ── */
 @media only screen and (max-width: 1600px) {
   .contact-section h3 {
     font-size: 50px;
   }
 
-  .contact-box h2 {
-    font-size: 20px;
-  }
-
-  a.contact-social {
-    font-size: 22px;
+  .contact-cta-link {
+    font-size: 24px;
   }
 }
 
@@ -78,39 +212,66 @@ a.contact-social {
     font-size: 40px;
   }
 
-  .contact-box h2 {
-    font-size: 18px;
-  }
-
-  a.contact-social {
+  .contact-cta-link {
     font-size: 20px;
-  }
-
-  .contact-flex p {
-    margin-top: 0px;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .contact-flex {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .contact-flex p {
-    margin-bottom: 0px;
-  }
-
-  .contact-flex h4 {
-    margin-top: 20px;
-  }
-
   .contact-section {
-    margin-top: 50px;
+    margin-top: 60px;
     padding-bottom: 50px;
+  }
+
+  .contact-section h3 {
+    font-size: 34px;
+  }
+
+  .contact-cta-link {
+    font-size: 17px;
+    padding: 18px 0;
+  }
+
+  .contact-actions-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-btn {
+    text-align: center;
+    padding: 14px 28px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-why-items {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
   }
 
   .contact-container {
     width: calc(100% - 25px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-section h3 {
+    font-size: 28px;
+  }
+
+  .contact-cta-link {
+    font-size: 15px;
+  }
+
+  .contact-btn {
+    font-size: 13px;
   }
 }
