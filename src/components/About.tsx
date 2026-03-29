@@ -11,7 +11,7 @@ const About = () => {
           <span className="about-break" />
           Today, I operate as a <span className="accent-text">Product generalist</span> with strong
           business judgement moving from whiteboarding ideas to shipping
-          full-stack products.
+          full-stack products.{" "}
           <span className="about-break" />
           I'm drawn to building in 0 → 1 or scaling
           from 1 → 100 environments, creating things that actually move the
