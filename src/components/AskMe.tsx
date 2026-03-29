@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import "./styles/AskMe.css";
 
 const presetQA: { q: string; a: string }[] = [
@@ -77,34 +78,41 @@ const AskMe = () => {
     setAnswered((prev) => new Set(prev).add(index));
   };
 
-  // Mobile: inline in page flow
-  if (!isDesktop) {
-    return (
-      <div className="askme-section">
-        <div className="askme-chat">
-          <ChatContent messages={messages} answered={answered} onQuestion={handleQuestion} />
-        </div>
-      </div>
-    );
-  }
+  // Desktop: render floating widget via portal to document.body (escapes ScrollSmoother)
+  const desktopWidget = isDesktop
+    ? createPortal(
+        <>
+          <div className={`askme-fab ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? "✕" : "💬"}
+          </div>
+          {isOpen && (
+            <div className="askme-widget">
+              <div className="askme-widget-header">
+                <span>Ask me anything</span>
+                <button className="askme-widget-close" onClick={() => setIsOpen(false)}>✕</button>
+              </div>
+              <div className="askme-widget-body">
+                <ChatContent messages={messages} answered={answered} onQuestion={handleQuestion} />
+              </div>
+            </div>
+          )}
+        </>,
+        document.body
+      )
+    : null;
 
-  // Desktop: floating widget
   return (
     <>
-      <div className={`askme-fab ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "✕" : "💬"}
-      </div>
-      {isOpen && (
-        <div className="askme-widget">
-          <div className="askme-widget-header">
-            <span>Ask me anything</span>
-            <button className="askme-widget-close" onClick={() => setIsOpen(false)}>✕</button>
-          </div>
-          <div className="askme-widget-body">
+      {/* Mobile: inline in page flow */}
+      {!isDesktop && (
+        <div className="askme-section">
+          <div className="askme-chat">
             <ChatContent messages={messages} answered={answered} onQuestion={handleQuestion} />
           </div>
         </div>
       )}
+      {/* Desktop: portal to body */}
+      {desktopWidget}
     </>
   );
 };
