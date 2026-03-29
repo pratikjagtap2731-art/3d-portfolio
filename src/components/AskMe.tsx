@@ -53,6 +53,10 @@ const ChatContent = ({
   </>
 );
 
+// Export toggle function so SocialIcons can trigger it
+let toggleWidgetFn: (() => void) | null = null;
+export const toggleAskMe = () => toggleWidgetFn?.();
+
 const AskMe = () => {
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
     { role: "ai", text: "Hey! I'm Pratik's AI assistant. Ask me anything about him 👇" },
@@ -67,6 +71,11 @@ const AskMe = () => {
     return () => window.removeEventListener("resize", handler);
   }, []);
 
+  useEffect(() => {
+    toggleWidgetFn = () => setIsOpen((prev) => !prev);
+    return () => { toggleWidgetFn = null; };
+  }, []);
+
   const handleQuestion = (index: number) => {
     if (answered.has(index)) return;
     const qa = presetQA[index];
@@ -78,28 +87,24 @@ const AskMe = () => {
     setAnswered((prev) => new Set(prev).add(index));
   };
 
-  // Desktop: render floating widget via portal to document.body (escapes ScrollSmoother)
-  const desktopWidget = isDesktop
-    ? createPortal(
-        <>
-          <div className={`askme-fab ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? "✕" : "💬"}
-          </div>
-          {isOpen && (
-            <div className="askme-widget">
-              <div className="askme-widget-header">
-                <span>Ask me anything</span>
-                <button className="askme-widget-close" onClick={() => setIsOpen(false)}>✕</button>
-              </div>
-              <div className="askme-widget-body">
-                <ChatContent messages={messages} answered={answered} onQuestion={handleQuestion} />
-              </div>
+  // Desktop: render widget via portal to document.body
+  const desktopWidget =
+    isDesktop && isOpen
+      ? createPortal(
+          <div className="askme-widget">
+            <div className="askme-widget-header">
+              <span>Ask me anything</span>
+              <button className="askme-widget-close" onClick={() => setIsOpen(false)}>
+                ✕
+              </button>
             </div>
-          )}
-        </>,
-        document.body
-      )
-    : null;
+            <div className="askme-widget-body">
+              <ChatContent messages={messages} answered={answered} onQuestion={handleQuestion} />
+            </div>
+          </div>,
+          document.body
+        )
+      : null;
 
   return (
     <>
@@ -111,7 +116,6 @@ const AskMe = () => {
           </div>
         </div>
       )}
-      {/* Desktop: portal to body */}
       {desktopWidget}
     </>
   );

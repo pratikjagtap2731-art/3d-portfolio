@@ -3,10 +3,12 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa6";
+import { RiRobot2Line } from "react-icons/ri";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
+import { toggleAskMe } from "./AskMe";
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -58,6 +60,15 @@ const SocialIcons = () => {
   return (
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
+        <span>
+          <a
+            onClick={(e) => { e.preventDefault(); toggleAskMe(); }}
+            href="#"
+            className="askme-icon"
+          >
+            <RiRobot2Line />
+          </a>
+        </span>
         <span>
           <a
             href="https://github.com/pratikjagtap2731-art"

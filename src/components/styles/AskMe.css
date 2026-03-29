@@ -89,42 +89,11 @@
   }
 }
 
-/* ── Desktop: floating widget ── */
-.askme-fab {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #14b8a6, #0d9488);
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 99999;
-  box-shadow: 0 4px 20px rgba(20, 184, 166, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  user-select: none;
-}
-
-.askme-fab:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(20, 184, 166, 0.5);
-}
-
-.askme-fab.open {
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 20px;
-  box-shadow: none;
-}
-
+/* ── Desktop: widget popup (triggered from sidebar icon) ── */
 .askme-widget {
   position: fixed;
-  bottom: 100px;
-  right: 30px;
+  bottom: 80px;
+  left: 60px;
   width: 380px;
   max-height: 500px;
   background: rgba(10, 14, 23, 0.95);
@@ -180,6 +149,11 @@
   flex: 1;
 }
 
+/* Robot icon highlight in sidebar */
+.askme-icon {
+  cursor: pointer;
+}
+
 /* Hide inline section on desktop */
 @media only screen and (min-width: 1025px) {
   .askme-section {
@@ -187,9 +161,8 @@
   }
 }
 
-/* Hide floating widget on mobile */
+/* Hide widget on mobile (inline is used instead) */
 @media only screen and (max-width: 1024px) {
-  .askme-fab,
   .askme-widget {
     display: none;
   }
