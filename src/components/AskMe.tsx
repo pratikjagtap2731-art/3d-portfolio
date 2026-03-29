@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles/AskMe.css";
 
 const presetQA: { q: string; a: string }[] = [
@@ -20,11 +20,51 @@ const presetQA: { q: string; a: string }[] = [
   },
 ];
 
+const ChatContent = ({
+  messages,
+  answered,
+  onQuestion,
+}: {
+  messages: { role: "user" | "ai"; text: string }[];
+  answered: Set<number>;
+  onQuestion: (i: number) => void;
+}) => (
+  <>
+    <div className="askme-messages">
+      {messages.map((msg, i) => (
+        <div key={i} className={`askme-bubble ${msg.role}`}>
+          {msg.text}
+        </div>
+      ))}
+    </div>
+    <div className="askme-options">
+      {presetQA.map((qa, i) => (
+        <button
+          key={i}
+          className={`askme-btn ${answered.has(i) ? "used" : ""}`}
+          onClick={() => onQuestion(i)}
+          disabled={answered.has(i)}
+        >
+          {qa.q}
+        </button>
+      ))}
+    </div>
+  </>
+);
+
 const AskMe = () => {
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
     { role: "ai", text: "Hey! I'm Pratik's AI assistant. Ask me anything about him 👇" },
   ]);
   const [answered, setAnswered] = useState<Set<number>>(new Set());
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+
+  useEffect(() => {
+    const handler = () => setIsDesktop(window.innerWidth > 1024);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
 
   const handleQuestion = (index: number) => {
     if (answered.has(index)) return;
@@ -37,30 +77,35 @@ const AskMe = () => {
     setAnswered((prev) => new Set(prev).add(index));
   };
 
-  return (
-    <div className="askme-section">
-      <div className="askme-chat">
-        <div className="askme-messages">
-          {messages.map((msg, i) => (
-            <div key={i} className={`askme-bubble ${msg.role}`}>
-              {msg.text}
-            </div>
-          ))}
-        </div>
-        <div className="askme-options">
-          {presetQA.map((qa, i) => (
-            <button
-              key={i}
-              className={`askme-btn ${answered.has(i) ? "used" : ""}`}
-              onClick={() => handleQuestion(i)}
-              disabled={answered.has(i)}
-            >
-              {qa.q}
-            </button>
-          ))}
+  // Mobile: inline in page flow
+  if (!isDesktop) {
+    return (
+      <div className="askme-section">
+        <div className="askme-chat">
+          <ChatContent messages={messages} answered={answered} onQuestion={handleQuestion} />
         </div>
       </div>
-    </div>
+    );
+  }
+
+  // Desktop: floating widget
+  return (
+    <>
+      <div className={`askme-fab ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "✕" : "💬"}
+      </div>
+      {isOpen && (
+        <div className="askme-widget">
+          <div className="askme-widget-header">
+            <span>Ask me anything</span>
+            <button className="askme-widget-close" onClick={() => setIsOpen(false)}>✕</button>
+          </div>
+          <div className="askme-widget-body">
+            <ChatContent messages={messages} answered={answered} onQuestion={handleQuestion} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
