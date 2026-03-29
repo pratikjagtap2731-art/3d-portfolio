@@ -30,6 +30,10 @@
   letter-spacing: 1px;
 }
 
+.accent-text {
+  color: var(--accentColor);
+}
+
 .about-break {
   display: none;
 }

@@ -9,9 +9,11 @@ const About = () => {
           I'm an engineer who couldn't stop asking "why," which pulled me
           beyond the code.{" "}
           <span className="about-break" />
-          Today, I operate as a Product generalist with strong
+          Today, I operate as a <span className="accent-text">Product generalist</span> with strong
           business judgement moving from whiteboarding ideas to shipping
-          full-stack products. I'm drawn to building in 0 → 1 or scaling
+          full-stack products.
+          <span className="about-break" />
+          I'm drawn to building in 0 → 1 or scaling
           from 1 → 100 environments, creating things that actually move the
           needle.
         </p>
