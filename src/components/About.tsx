@@ -6,11 +6,12 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I am a technologist at heart with strong business judgment—
-          I enjoy going from product strategy to hands-on engineering. My background
-          spans product management and analytics, shipping full-stack products end
-          to end. I'm a startup enthusiast and love building in 0 → 1 or
-          1 → 100 environments.
+          I'm an engineer who couldn't stop asking "why," which pulled me
+          beyond the code. Today, I operate as a Product generalist—moving
+          fluidly from strategy to execution, from whiteboarding ideas to
+          shipping full-stack products. I'm drawn to building in 0 → 1
+          or scaling from 1 → 100 environments, focused on creating things
+          that actually move the needle.
         </p>
       </div>
     </div>

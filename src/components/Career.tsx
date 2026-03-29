@@ -15,16 +15,16 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Technical Product Associate</h4>
-                <h5>3rd Rock Essentials</h5>
+                <h4>Technical Product Manager</h4>
+                <h5>3rd Rock Essentials <span style={{opacity: 0.5, fontSize: "0.85em"}}>· startup</span> · San Francisco, CA</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Leading end-to-end Agile delivery, crafting PRDs, and rolling out
-              Stripe-integrated subscription workflows delivering 14% MRR growth.
-              Improved D2C onboarding and retention by 27% through GA4 funnels
-              and A/B testing.
+              Owned end-to-end Agile delivery shipping features and deployed
+              AI-powered automations across e-commerce, warehouse operations,
+              and sales support driving 14% MRR growth. Improved customer
+              onboarding and retention by 27%.
             </p>
           </div>
           <div className="career-info-box">
@@ -37,22 +37,22 @@ const Career = () => {
             </div>
             <p>
               Led full product lifecycle for an outbound picking tool across
-              fulfillment centers, improving throughput 42%, reducing travel time
-              27%, and delivering $1.8M ROI in 10 weeks.
+              Walmart's fulfillment centers, improving throughput 42%, reducing
+              travel time 27%, and delivering $1.8M cost savings in 10 weeks.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Product Marketing Consultant</h4>
-                <h5>SKLLD · Durham, NC</h5>
+                <h5>SKLLD <span style={{opacity: 0.5, fontSize: "0.85em"}}>· startup</span> · Durham, NC</h5>
               </div>
               <h3>2023</h3>
             </div>
             <p>
-              Built GTM strategy for a job training platform, conducted 150+
-              stakeholder interviews, and designed Figma prototypes achieving
-              65% positive beta feedback.
+              Built go-to-market strategy for a job training platform,
+              championing the Voice of Customer (VoC) and designed Figma
+              prototypes achieving 65% positive beta feedback.
             </p>
           </div>
           <div className="career-info-box">
