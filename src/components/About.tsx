@@ -10,7 +10,7 @@ const About = () => {
           beyond the code.{" "}
           <span className="about-break" />
           Today, I operate as a Product generalist with strong
-          business judgement — moving from whiteboarding ideas to shipping
+          business judgement moving from whiteboarding ideas to shipping
           full-stack products. I'm drawn to building in 0 → 1 or scaling
           from 1 → 100 environments, creating things that actually move the
           needle.
