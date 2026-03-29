@@ -42,6 +42,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  cursor: pointer;
 }
 
 .career-info-box p {
@@ -59,6 +60,16 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 12px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.career-info-box:hover .career-skills,
+.career-info-box.skills-open .career-skills {
+  opacity: 1;
+  max-height: 200px;
 }
 
 .career-skills span {
@@ -227,6 +238,7 @@
   .career-container {
     width: calc(100% - 25px);
   }
+
 }
 
 @media only screen and (max-width: 600px) {

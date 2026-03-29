@@ -1,6 +1,13 @@
+import { useState } from "react";
 import "./styles/Career.css";
 
 const Career = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleSkills = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
     <div className="career-section section-container">
       <div className="career-container">
@@ -12,7 +19,10 @@ const Career = () => {
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
-          <div className="career-info-box">
+          <div
+            className={`career-info-box ${expandedIndex === 0 ? "skills-open" : ""}`}
+            onClick={() => toggleSkills(0)}
+          >
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Technical Product Manager</h4>
@@ -37,7 +47,10 @@ const Career = () => {
               </div>
             </div>
           </div>
-          <div className="career-info-box">
+          <div
+            className={`career-info-box ${expandedIndex === 1 ? "skills-open" : ""}`}
+            onClick={() => toggleSkills(1)}
+          >
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Product Manager Intern</h4>
@@ -61,7 +74,10 @@ const Career = () => {
               </div>
             </div>
           </div>
-          <div className="career-info-box">
+          <div
+            className={`career-info-box ${expandedIndex === 2 ? "skills-open" : ""}`}
+            onClick={() => toggleSkills(2)}
+          >
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Product Marketing Consultant</h4>
@@ -83,7 +99,10 @@ const Career = () => {
               </div>
             </div>
           </div>
-          <div className="career-info-box">
+          <div
+            className={`career-info-box ${expandedIndex === 3 ? "skills-open" : ""}`}
+            onClick={() => toggleSkills(3)}
+          >
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Programmer Analyst</h4>
