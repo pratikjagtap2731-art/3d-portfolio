@@ -7,7 +7,7 @@ const About = () => {
         <h3 className="title">About Me</h3>
         <p className="para">
           I'm an engineer who couldn't stop asking "why," which pulled me
-          beyond the code.
+          beyond the code.{" "}
           <span className="about-break" />
           Today, I operate as a Product generalist with strong
           business judgement — moving from whiteboarding ideas to shipping
