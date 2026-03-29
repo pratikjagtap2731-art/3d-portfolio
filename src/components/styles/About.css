@@ -30,6 +30,32 @@
   letter-spacing: 1px;
 }
 
+.glare-text {
+  font-style: italic;
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 0%,
+    #e2e8f0 40%,
+    var(--accentColor) 50%,
+    #e2e8f0 60%,
+    #e2e8f0 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glare 3s ease-in-out infinite;
+}
+
+@keyframes glare {
+  0%, 100% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: -100% 0;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .about-me h3 {
     font-size: 20px;
