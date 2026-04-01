@@ -128,7 +128,7 @@
   border-radius: 50%;
   overflow: hidden;
   padding: 4px;
-  background: linear-gradient(135deg, #14b8a6, #f97316);
+  background: #fb923c; /* Warm orange border */
 }
 
 .contact-photo img {
@@ -136,8 +136,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  transform: scale(1.25);
-  transform-origin: center top;
   border-radius: 50%;
   display: block;
 }

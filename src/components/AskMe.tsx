@@ -58,8 +58,9 @@ let toggleWidgetFn: (() => void) | null = null;
 export const toggleAskMe = () => toggleWidgetFn?.();
 
 const AskMe = () => {
+  const isInitiallyDesktop = typeof window !== 'undefined' ? window.innerWidth > 1024 : true;
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
-    { role: "ai", text: "Hey! I'm Pratik's AI assistant (Prototype). Ask me anything about him 👇" },
+    { role: "ai", text: `Hey! I'm Pratik's AI assistant${isInitiallyDesktop ? " (Prototype)" : "*"}. Ask me anything about him 👇` },
   ]);
   const [answered, setAnswered] = useState<Set<number>>(new Set());
   const [isOpen, setIsOpen] = useState(false);
