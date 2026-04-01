@@ -24,7 +24,7 @@ const projects: Project[] = [
       "72% increase in Units per hour (UPH)",
     ],
     image: "/images/walmart crop.png",
-    mobileImage: "/images/walmart product.png",
+    mobileImage: "/images/walmart-product.png",
   },
   {
     title: "Visitor & Workflow Management Platform",
@@ -37,7 +37,7 @@ const projects: Project[] = [
       "96% approval accuracy across plant operations",
     ],
     image: "/images/atlas copco cropped.png",
-    mobileImage: "/images/atlas copco product.png",
+    mobileImage: "/images/atlas-copco-product.png",
   },
   {
     title: "Coming Soon",
