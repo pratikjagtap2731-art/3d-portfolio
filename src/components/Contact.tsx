@@ -1,5 +1,6 @@
 import { MdCopyright } from "react-icons/md";
 import { FiArrowUpRight } from "react-icons/fi";
+import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 import "./styles/Contact.css";
 
 const Contact = () => {
@@ -73,7 +74,8 @@ const Contact = () => {
         {/* ── Elsewhere ── */}
         <div className="contact-elsewhere">
           <span className="contact-elsewhere-label">Elsewhere</span>
-          <div className="contact-links">
+          {/* Desktop: text links */}
+          <div className="contact-links contact-links-desktop">
             <a
               href="https://www.linkedin.com/in/pj00/"
               target="_blank"
@@ -99,16 +101,51 @@ const Contact = () => {
               Instagram <FiArrowUpRight />
             </a>
           </div>
+          {/* Mobile: icon logos */}
+          <div className="contact-links contact-links-mobile">
+            <a
+              href="https://www.linkedin.com/in/pj00/"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+              className="social-icon-btn"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="https://github.com/pratikjagtap2731-art"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+              className="social-icon-btn"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.instagram.com/_pratikkk_27/"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+              className="social-icon-btn"
+            >
+              <FaInstagram />
+            </a>
+          </div>
         </div>
 
-        {/* ── Footer ── */}
-        <div className="contact-footer">
-          <span>
-            Designed & Developed by <em>Pratik Jagtap</em>
-          </span>
-          <span className="contact-copy">
-            <MdCopyright /> 2026
-          </span>
+        {/* ── Photo + Footer ── */}
+        <div className="contact-photo-section">
+          <div className="contact-photo">
+            <img src="/images/PratiJ.jpg" alt="Pratik Jagtap" />
+          </div>
+          <div className="contact-footer">
+            <span>
+              Designed & Developed by <em>Pratik Jagtap</em>
+            </span>
+            <span className="contact-copy">
+              <MdCopyright /> 2026
+            </span>
+          </div>
         </div>
       </div>
     </div>

@@ -13,21 +13,24 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+  "/images/JIRA.png",
+  "/images/PowerBI.png",
+  "/images/Tableau.png",
+  "/images/python.png",
+  "/images/claude.png",
+  "/images/n8n.png",
+  "/images/Figma.png",
+  "/images/notion.png",
+  "/images/miro.png",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
+// Create equal number of spheres per skill (27 total = 3 per skill × 9 skills)
+const spheres = [...Array(27)].map((_, i) => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
+  textureIndex: i % imageUrls.length,
 }));
 
 type SphereProps = {
@@ -193,7 +196,7 @@ const TechStack = () => {
             <SphereGeo
               key={i}
               {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
+              material={materials[props.textureIndex]}
               isActive={isActive}
             />
           ))}

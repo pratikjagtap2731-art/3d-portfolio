@@ -96,6 +96,12 @@ const WhatIDo = () => {
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
+                <div className="what-tags">Product Roadmap</div>
+                <div className="what-tags">Agile</div>
+                <div className="what-tags">User Stories</div>
+                <div className="what-tags">PRDs</div>
+                <div className="what-tags">Market Research</div>
+                <div className="what-tags">Competitive Analysis</div>
                 <div className="what-tags">UX/UI</div>
                 <div className="what-tags">MVP</div>
                 <div className="what-tags">Go to Market</div>
