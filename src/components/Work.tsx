@@ -8,6 +8,7 @@ interface Project {
   description: string;
   kpis: string[];
   image?: string;
+  mobileImage?: string;
   comingSoon?: boolean;
 }
 
@@ -23,6 +24,7 @@ const projects: Project[] = [
       "72% increase in Units per hour (UPH)",
     ],
     image: "/images/walmart crop.png",
+    mobileImage: "/images/walmart product.png",
   },
   {
     title: "Visitor & Workflow Management Platform",
@@ -35,6 +37,7 @@ const projects: Project[] = [
       "96% approval accuracy across plant operations",
     ],
     image: "/images/atlas copco cropped.png",
+    mobileImage: "/images/atlas copco product.png",
   },
   {
     title: "Coming Soon",
@@ -46,7 +49,7 @@ const projects: Project[] = [
   },
 ];
 
-const AUTO_SLIDE_INTERVAL = 5000;
+const AUTO_SLIDE_INTERVAL = 3800;
 
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -127,7 +130,7 @@ const Work = () => {
 
   // Auto-slide
   useEffect(() => {
-    if (isPaused || !isVisible) return;
+    if (isPaused || !isVisible || expandedSlide !== null) return;
     timerRef.current = setInterval(() => {
       setCurrentIndex((prev) =>
         prev === projects.length - 1 ? 0 : prev + 1
@@ -136,7 +139,7 @@ const Work = () => {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused, isVisible, currentIndex]);
+  }, [isPaused, isVisible, currentIndex, expandedSlide]);
 
   // Progress bar width
   const progressPercent = ((currentIndex + 1) / projects.length) * 100;
@@ -204,17 +207,24 @@ const Work = () => {
                     <div className="carousel-content">
                       <div className="carousel-info">
                         <div className="carousel-details">
-                          <h4>
-                            {project.title}
-                            {project.comingSoon && (
-                              <span className="soon-badge">Soon</span>
+                          <div className="carousel-header-wrapper">
+                            <div className="carousel-title-group">
+                              <h4>
+                                {project.title}
+                                {project.comingSoon && (
+                                  <span className="soon-badge">Soon</span>
+                                )}
+                              </h4>
+                              {project.category && (
+                                <p className="carousel-category">
+                                  {project.category}
+                                </p>
+                              )}
+                            </div>
+                            {project.mobileImage && (
+                              <img className="mobile-project-logo" src={project.mobileImage} alt="logo" />
                             )}
-                          </h4>
-                          {project.category && (
-                            <p className="carousel-category">
-                              {project.category}
-                            </p>
-                          )}
+                          </div>
                           <p className="carousel-description">
                             {project.description}
                           </p>
