@@ -40,6 +40,19 @@ const projects: Project[] = [
     mobileImage: "/images/atlas-copco-mobile.jpeg",
   },
   {
+    title: "Defect Management System",
+    category: "Fluid Controls",
+    description:
+      "Developed an internal workflow platform to digitize defect tracking and resolution processes across the plant. Designed user journeys for the Quality Control team and concerned departments to simplify defect reporting, root cause analysis submission, approvals, and preventive action tracking. Delivered a centralized system with Role based access control (RBAC) that replaced manual emails and paperwork, improving coordination between teams and enabling faster, more reliable defect resolution.",
+    kpis: [
+      "Reduced defect resolution turnaround time by ~30%",
+      "Saved 10,000+ man-hours annually",
+      "Reduced approval loop friction across departments by ~50%",
+    ],
+    image: "/images/fluid.png",
+    mobileImage: "/images/fc-logo.jpg",
+  },
+  {
     title: "Coming Soon",
     category: "More exciting work ahead",
     description:
