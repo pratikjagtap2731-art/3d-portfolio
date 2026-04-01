@@ -128,15 +128,7 @@
   border-radius: 50%;
   overflow: hidden;
   padding: 3px;
-  background: linear-gradient(135deg, #5eead4, #3b82f6, #a78bfa, #5eead4);
-  background-size: 300% 300%;
-  animation: gradientBorder 4s ease infinite;
-}
-
-@keyframes gradientBorder {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background: var(--accentColor);
 }
 
 .contact-photo img {

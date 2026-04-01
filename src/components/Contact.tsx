@@ -136,7 +136,7 @@ const Contact = () => {
         {/* ── Photo + Footer ── */}
         <div className="contact-photo-section">
           <div className="contact-photo">
-            <img src="/images/PHOTO-2026-04-01-16-09-21.jpg" alt="Pratik Jagtap" />
+            <img src="/images/PHOTO-2026-04-01-16-16-58.jpg" alt="Pratik Jagtap" />
           </div>
           <div className="contact-footer">
             <span>
