@@ -59,7 +59,7 @@ export const toggleAskMe = () => toggleWidgetFn?.();
 
 const AskMe = () => {
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
-    { role: "ai", text: "Hey! I'm Pratik's AI assistant. Ask me anything about him 👇" },
+    { role: "ai", text: "Hey! I'm Pratik's AI assistant (Prototype). Ask me anything about him 👇" },
   ]);
   const [answered, setAnswered] = useState<Set<number>>(new Set());
   const [isOpen, setIsOpen] = useState(false);

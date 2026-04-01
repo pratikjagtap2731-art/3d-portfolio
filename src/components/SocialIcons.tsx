@@ -67,6 +67,7 @@ const SocialIcons = () => {
             className="askme-icon"
           >
             <RiRobot2Line />
+            <span className="tooltip-beta">BETA</span>
           </a>
         </span>
         <span>
