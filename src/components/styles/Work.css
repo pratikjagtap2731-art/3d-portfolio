@@ -25,6 +25,7 @@
 
 .work-container {
   margin: auto;
+  box-sizing: border-box;
 }
 
 /* ── Progress Bar ── */
@@ -74,10 +75,11 @@
 
 .carousel-content {
   display: flex;
-  align-items: stretch; /* Prevents vertical jumping when heights differ */
+  align-items: stretch;
   gap: 40px;
   width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .carousel-info {
@@ -428,6 +430,10 @@
     margin-bottom: 16px;
   }
 
+  .work-container {
+    width: calc(100% - 25px);
+  }
+
   /* Card-style slides */
   .carousel-track-container {
     border: none;
@@ -444,6 +450,8 @@
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
     padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .carousel-info {
