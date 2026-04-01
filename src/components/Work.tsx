@@ -37,7 +37,7 @@ const projects: Project[] = [
       "96% approval accuracy across plant operations",
     ],
     image: "/images/atlas copco cropped.png",
-    mobileImage: "/images/atlas-copco-product.png",
+    mobileImage: "/images/atlas-copco-mobile.jpeg",
   },
   {
     title: "Coming Soon",
