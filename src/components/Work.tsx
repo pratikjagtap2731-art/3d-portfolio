@@ -54,6 +54,54 @@ const Work = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [expandedSlide, setExpandedSlide] = useState<number | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  
+  // Intersection Observer
+  const workSectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    const currentRef = workSectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  // Touch handlers for mobile swipe
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const minSwipeDistance = 40;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) goToNext();
+    if (isRightSwipe) goToPrev();
+  };
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -79,7 +127,7 @@ const Work = () => {
 
   // Auto-slide
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !isVisible) return;
     timerRef.current = setInterval(() => {
       setCurrentIndex((prev) =>
         prev === projects.length - 1 ? 0 : prev + 1
@@ -88,7 +136,7 @@ const Work = () => {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused, currentIndex]);
+  }, [isPaused, isVisible, currentIndex]);
 
   // Progress bar width
   const progressPercent = ((currentIndex + 1) / projects.length) * 100;
@@ -97,8 +145,12 @@ const Work = () => {
     <div
       className="work-section"
       id="work"
+      ref={workSectionRef}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <div className="work-container section-container">
         <div className="work-header">
