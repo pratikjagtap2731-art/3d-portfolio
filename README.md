@@ -1,10 +1,8 @@
-# 3D Portfolio Website
+# 3D Portfolio
 
-This repository contains the source code for a personal 3D portfolio built with React, TypeScript, Three.js, React Three Fiber, and GSAP. It includes animated page sections, a character scene, custom cursor interactions, and smooth transitions designed for a modern portfolio experience.
+An interactive personal portfolio featuring immersive 3D visuals, built using React, TypeScript, Three.js, React Three Fiber, and GSAP. The site showcases animated sections, a dynamic character scene, custom cursor effects, and fluid scroll-based transitions.
 
-Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.app/)
-
-![Portfolio Preview](public/images/preview1.png)
+Live site: [https://pratikjagtap.vercel.app/](https://pratikjagtap.vercel.app/)
 
 ## Table of Contents
 
@@ -14,18 +12,18 @@ Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
 - [GSAP License Note](#gsap-license-note)
-- [Customization Guide](#customization-guide)
+- [Customization](#customization)
 - [Troubleshooting](#troubleshooting)
 - [Deployment](#deployment)
 - [License](#license)
 
 ## Features
 
-- Responsive one-page portfolio layout with reusable section components.
-- 3D character scene rendering powered by React Three Fiber and Three.js.
-- GSAP-powered animations and transitions for interactive storytelling.
-- Custom cursor, hover interactions, and scroll-driven visual effects.
-- Organized component architecture with dedicated utilities and style modules.
+- Single-page responsive layout built with modular, reusable components.
+- Immersive 3D character scene powered by React Three Fiber and Three.js.
+- Smooth animations and transitions driven by GSAP for an engaging user experience.
+- Interactive cursor effects, hover states, and scroll-triggered visuals.
+- Clean component-based architecture with separated styles and utility modules.
 
 ## Tech Stack
 
@@ -100,77 +98,77 @@ Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.
    npm install
    ```
 
-3. Start the local development server:
+3. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-4. Open the URL shown in the terminal (typically `http://localhost:5173`).
+4. Open the URL displayed in the terminal (usually `http://localhost:5173`).
 
 ## Available Scripts
 
-- `npm run dev`  
-  Starts Vite dev server and exposes host for local network testing.
+- `npm run dev`
+  Launches the Vite dev server with host access for local network testing.
 
-- `npm run build`  
-  Type-checks and builds a production-ready bundle.
+- `npm run build`
+  Runs type checking and produces a production-optimized bundle.
 
-- `npm run preview`  
-  Serves the production build locally for verification.
+- `npm run preview`
+  Serves the production build locally for quick verification.
 
-- `npm run lint`  
-  Runs ESLint checks across the project.
+- `npm run lint`
+  Runs ESLint across the project source files.
 
 ## GSAP License Note
 
-This project uses the standard `gsap` package, including bonus plugins now available in the core package.
+This project uses the standard `gsap` package, which now includes bonus plugins in the core distribution.
 
-- Install dependencies with `npm install`.
-- If migrating from older setups, remove `gsap-trial` from your project.
+- Run `npm install` to set up all dependencies.
+- If upgrading from an older configuration, remove any `gsap-trial` references from your project.
 
-Read official installation guidance here: [GSAP Installation Docs](https://gsap.com/docs/v3/Installation/)
+See the official docs for more details: [GSAP Installation Docs](https://gsap.com/docs/v3/Installation/)
 
-## Customization Guide
+## Customization
 
-You can adapt this portfolio to your own profile by updating the following areas:
+To personalize this portfolio for your own use, update these areas:
 
-- **Content sections**: Edit files in `src/components/` such as `About.tsx`, `Career.tsx`, `WhatIDo.tsx`, and `Work.tsx`.
-- **Data source**: Update static values in files under `src/data/`.
-- **Styling**: Modify component styles in `src/components/styles/` and global styles in `src/index.css` / `src/App.css`.
-- **3D scene behavior**: Adjust scene logic in `src/components/Character/` and related utilities.
-- **Animations**: Tweak GSAP utilities under `src/components/utils/`.
+- **Page sections**: Modify component files in `src/components/` like `About.tsx`, `Career.tsx`, `WhatIDo.tsx`, and `Work.tsx`.
+- **Static content**: Change values in files under `src/data/`.
+- **Visual styling**: Edit component styles in `src/components/styles/` and global styles in `src/index.css` / `src/App.css`.
+- **3D scene**: Adjust character and scene logic in `src/components/Character/`.
+- **Animations**: Fine-tune GSAP configurations in `src/components/utils/`.
 
 ## Troubleshooting
 
-- **Blank screen in development**  
-  Check browser console for module import errors and verify all dependencies are installed.
+- **Blank screen on dev**
+  Open the browser console to check for module import errors and confirm all dependencies are installed.
 
-- **3D performance issues on low-end devices**  
-  Reduce scene complexity and post-processing effects in the character/scene utilities.
+- **Slow 3D rendering on lower-end hardware**
+  Consider simplifying the scene and reducing post-processing effects in the character/scene utilities.
 
-- **GSAP plugin errors**  
-  Ensure you have the correct plugin package and license configuration for your target environment.
+- **GSAP plugin errors**
+  Verify that the correct plugin package and license setup are in place for your environment.
 
-- **TypeScript build failures**  
-  Run `npm run build` and address reported type errors before deploying.
+- **TypeScript build failures**
+  Run `npm run build` and resolve any reported type errors before deploying.
 
 ## Deployment
 
-1. Create a production build:
+1. Build for production:
 
    ```bash
    npm run build
    ```
 
-2. Validate locally:
+2. Preview locally:
 
    ```bash
    npm run preview
    ```
 
-3. Deploy the generated `dist/` folder to your hosting provider (for example Vercel, Netlify, or Cloudflare Pages).
+3. Deploy the `dist/` folder to your preferred hosting service (e.g., Vercel, Netlify, or Cloudflare Pages).
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source under the [MIT License](LICENSE).
