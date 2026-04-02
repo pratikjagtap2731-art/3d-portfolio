@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "Outbound Picking Tool",
     category: "Walmart Global Tech",
     description:
-      "Improved how warehouse associates move inside fulfillment centers while collecting products for shipment. Earlier, associates followed longer routes and spent extra time moving back and forth between aisles. Redesigned the picking workflow so movement became shorter and more efficient. Collaborated with operations and engineering teams to implement improvements in the internal picking system.",
+      "Improved how warehouse associates move inside fulfillment centers while collecting products for shipment. Earlier, associates followed longer routes and spent extra time moving back and forth between aisles. Redesigned the picking workflow so movement became shorter and more efficient. Collaborated across design, QA, operations, and engineering in delivering this software tool.",
     kpis: [
       "27% reduction in associate travel time",
       "42% increase in picking throughput",
