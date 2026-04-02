@@ -1,4 +1,5 @@
 import {
+  FaGithub,
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa6";
@@ -76,6 +77,15 @@ const SocialIcons = () => {
             rel="noreferrer"
           >
             <FaLinkedinIn />
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://github.com/pratikjagtap2731-art"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub />
           </a>
         </span>
         <span>
