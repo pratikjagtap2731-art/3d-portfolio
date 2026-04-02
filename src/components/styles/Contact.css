@@ -128,7 +128,7 @@
   border-radius: 50%;
   overflow: hidden;
   padding: 4px;
-  background: #fb923c; /* Warm orange border */
+  background: var(--accentColor);
 }
 
 .contact-photo img {
