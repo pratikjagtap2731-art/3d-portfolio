@@ -1,6 +1,6 @@
 import { MdCopyright } from "react-icons/md";
 import { FiArrowUpRight } from "react-icons/fi";
-import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import "./styles/Contact.css";
 
 const Contact = () => {
@@ -85,14 +85,6 @@ const Contact = () => {
               LinkedIn <FiArrowUpRight />
             </a>
             <a
-              href="https://github.com/pratikjagtap2731-art"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-            >
-              GitHub <FiArrowUpRight />
-            </a>
-            <a
               href="https://www.instagram.com/_pratikkk_27/"
               target="_blank"
               rel="noreferrer"
@@ -111,15 +103,6 @@ const Contact = () => {
               className="social-icon-btn"
             >
               <FaLinkedinIn />
-            </a>
-            <a
-              href="https://github.com/pratikjagtap2731-art"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="social-icon-btn"
-            >
-              <FaGithub />
             </a>
             <a
               href="https://www.instagram.com/_pratikkk_27/"
