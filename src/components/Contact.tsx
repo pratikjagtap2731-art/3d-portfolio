@@ -22,11 +22,11 @@ const Contact = () => {
             pratikjagtap2731@gmail.com <FiArrowUpRight />
           </a>
           <a
-            href="tel:+19196382745"
+            href="tel:+19196382746"
             className="contact-cta-link"
             data-cursor="disable"
           >
-            +1 (919) 638-2745 <FiArrowUpRight />
+            +1 (919) 638-2746 <FiArrowUpRight />
           </a>
         </div>
 
